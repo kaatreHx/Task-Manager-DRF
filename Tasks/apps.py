@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class BlogapiConfig(AppConfig):
+class TasksConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'BlogAPI'
+    name = 'Tasks'
