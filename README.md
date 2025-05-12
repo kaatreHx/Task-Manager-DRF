@@ -1,4 +1,4 @@
-# TaskManager API
+# Task Manager API
 
 A simple task management API built with Django REST Framework (DRF). This API allows users to manage tasks, including CRUD operations and user authentication.
 
@@ -6,8 +6,6 @@ A simple task management API built with Django REST Framework (DRF). This API al
 
 - User Registration & Login (JWT Authentication)
 - Task Management (Create, Update, Delete)
-- Task Assignment & Categories
-- Due Date Tracking
 - Permissions for User Roles
 
 ## Installation
