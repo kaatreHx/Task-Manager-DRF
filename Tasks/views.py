@@ -5,6 +5,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from rest_framework.status import HTTP_201_CREATED
+from .pagination import TaskPagination
+from django_filters.rest_framework import DjangoFilterBackend
 
 class Registration(APIView):
     def post(self, request):
@@ -19,6 +21,10 @@ class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticated]
+    pagination_class = TaskPagination
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['title', 'description', 'status']
+    ordering_fields = ['created_at', 'updated_at']
 
     def get_queryset(self):
         return self.queryset.filter(user = self.request.user)
